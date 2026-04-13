@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import instance from '../Utils/axios'
 import TopNav from './partials/TopNav'
-import { useNavigate, Link } from 'react-router-dom' // Link yahan add kiya
+import { useNavigate, Link } from 'react-router-dom'
 import { FaArrowLeftLong } from "react-icons/fa6"
 import { motion, AnimatePresence } from 'framer-motion'
 import Dropdown from './partials/Dropdown'
@@ -75,7 +75,7 @@ const Movies = () => {
             <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 p-5 md:p-10'>
                 <AnimatePresence>
                     {data.map((item, index) => (
-                        <Link to={`/movies/details/${item.id}`} key={index}> {/* Correct Path */}
+                        <Link to={`/movies/details/${item.id}`} key={index}> 
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}

@@ -13,7 +13,7 @@ const Tv = () => {
     const [page, setPage] = useState(1)
     const [loading, setLoading] = useState(false)
 
-    // 🔥 API Call for TV Shows
+   
     const getTvShows = async () => {
         try {
             setLoading(true)
@@ -30,7 +30,7 @@ const Tv = () => {
         getTvShows()
     }, [category, page])
 
-    // 🔥 Infinite Scroll Logic
+    
     useEffect(() => {
         const handleScroll = () => {
             if (window.innerHeight + document.documentElement.scrollTop + 1 >= document.documentElement.scrollHeight) {
@@ -44,7 +44,7 @@ const Tv = () => {
     return (
         <div className='bg-[#0F0F12] min-h-screen text-white pb-10'>
             
-            {/* 🌌 Premium Header */}
+            
             <div className='sticky top-0 z-[100] backdrop-blur-xl bg-[#0F0F12]/80 border-b border-white/5 px-5 py-4 flex items-center justify-between'>
                 <div className='flex items-center gap-6'>
                     <motion.button 
@@ -77,17 +77,17 @@ const Tv = () => {
                 </div>
             </div>
 
-            {/* Mobile TopNav */}
+            
             <div className='lg:hidden px-5 mt-4'>
                 <TopNav />
             </div>
 
-            {/* 🎬 TV Grid */}
+            
             <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 p-5 md:p-10'>
                 <AnimatePresence mode='popLayout'>
                     {data.map((item, index) => (
                         <Link 
-                            to={`/tv/details/${item.id}`} // 🔥 Tera Updated Path
+                            to={`/tv/details/${item.id}`} 
                             key={index}
                         >
                             <motion.div
@@ -98,7 +98,7 @@ const Tv = () => {
                                 whileHover={{ y: -10 }}
                                 className='group relative bg-[#1A1A1E] rounded-2xl overflow-hidden border border-white/5 shadow-2xl cursor-pointer aspect-[2/3]'
                             >
-                                {/* Poster Image */}
+                                
                                 <img
                                     className='w-full h-full object-cover transition-transform duration-700 group-hover:scale-110'
                                     src={item.poster_path ? `https://image.tmdb.org/t/p/w500${item.poster_path}` : "/noimage.jpg"}
@@ -106,15 +106,14 @@ const Tv = () => {
                                     loading="lazy"
                                 />
 
-                                {/* Info Overlay */}
                                 <div className='absolute inset-0 bg-gradient-to-t from-[#0F0F12] via-transparent to-transparent opacity-90' />
                                 
-                                {/* Badge */}
+                                
                                 <div className='absolute top-3 left-3 bg-[#8b7ff0]/20 backdrop-blur-md px-2 py-0.5 rounded border border-[#8b7ff0]/30'>
                                     <span className='text-[#8b7ff0] text-[10px] font-black uppercase'>Series</span>
                                 </div>
 
-                                {/* Content */}
+                                
                                 <div className='absolute bottom-0 left-0 w-full p-4 transform translate-y-1 group-hover:translate-y-0 transition-transform'>
                                     <h2 className='text-sm md:text-base font-bold line-clamp-1 group-hover:text-[#8b7ff0] transition-colors'>
                                         {item.name || "Unknown Show"}
@@ -134,7 +133,7 @@ const Tv = () => {
                 </AnimatePresence>
             </div>
 
-            {/* 🔄 Loading Spinner */}
+           
             {loading && (
                 <div className='flex justify-center p-10'>
                     <div className='w-8 h-8 border-2 border-[#8b7ff0] border-t-transparent rounded-full animate-spin'></div>

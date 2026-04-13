@@ -14,7 +14,7 @@ const TrendingDetail = () => {
     try {
       setLoading(true)
       let res;
-      // Trending mein Movie ya TV kuch bhi ho sakta hai, isliye dono try karte hain
+      
       try {
         res = await instance.get(`/movie/${id}?append_to_response=videos`)
       } catch (err) {
@@ -42,7 +42,7 @@ const TrendingDetail = () => {
   return (
     <div className='min-h-screen bg-[#0F0F12] text-white overflow-x-hidden'>
       
-      {/* 🎬 Hero Section */}
+      
       <div className='relative w-full h-[60vh] md:h-[85vh]'>
         <div className='absolute inset-0'>
           <img 
@@ -93,7 +93,7 @@ const TrendingDetail = () => {
         </div>
       </div>
 
-      {/* 📺 Trailer Section */}
+      
       <div className='p-5 md:p-20'>
         <h2 className='text-3xl font-black mb-10 tracking-tighter'>PREVIEW</h2>
         <div className='relative w-full aspect-video rounded-3xl overflow-hidden border border-white/5 shadow-2xl bg-zinc-900'>

@@ -8,7 +8,7 @@ const Dropdown = ({ title, options, func }) => {
 
   return (
     <div className="relative  inline-block text-left z-[100]">
-      {/* Trigger Button */}
+      
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center justify-between gap-3 bg-zinc-800/80 backdrop-blur-md text-white py-2 px-5 rounded-full border border-white/10 shadow-lg hover:bg-zinc-700 transition-all active:scale-95 text-xs md:text-sm font-bold min-w-[120px]"
@@ -17,7 +17,7 @@ const Dropdown = ({ title, options, func }) => {
         <RiArrowDownSLine className={`text-lg transition-transform duration-300 ${isOpen ? 'rotate-180' : 'rotate-0'}`} />
       </button>
 
-      {/* Options Menu */}
+     
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -43,7 +43,7 @@ const Dropdown = ({ title, options, func }) => {
         )}
       </AnimatePresence>
 
-      {/* Background overlay to close dropdown */}
+      
       {isOpen && <div className="fixed inset-0 z-[-1]" onClick={() => setIsOpen(false)} />}
     </div>
   );

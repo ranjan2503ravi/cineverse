@@ -4,12 +4,8 @@ import { CiSearch, CiMicrophoneOn } from "react-icons/ci";
 import { IoMdClose } from "react-icons/io";
 import { FaRegUserCircle } from "react-icons/fa";
 import AuthModal from "../../Auth/AuthModal";
-
-// ✅ Redux
 import { useDispatch } from "react-redux";
 import { setDetail } from "../../features/detailSlice";
-
-// ✅ Navigation
 import { useNavigate } from "react-router-dom";
 
 const TopNav = () => {
@@ -18,13 +14,9 @@ const TopNav = () => {
   const [loading, setLoading] = useState(false);
   const [openAuth, setOpenAuth] = useState(false);
 
-  // ✅ Redux dispatch
   const dispatch = useDispatch();
-
-  // ✅ Navigation
   const navigate = useNavigate();
 
-  // 🎤 Voice Search Setup
   const SpeechRecognition =
     window.SpeechRecognition || window.webkitSpeechRecognition;
 
@@ -43,7 +35,7 @@ const TopNav = () => {
     };
   };
 
-  // 🔍 API call for search
+ 
   const getSearch = async () => {
     try {
       setLoading(true);
@@ -56,7 +48,6 @@ const TopNav = () => {
     }
   };
 
-  // ⏱️ Debounce (500ms delay)
   useEffect(() => {
     const timer = setTimeout(() => {
       if (input.trim() !== "") getSearch();
@@ -66,18 +57,18 @@ const TopNav = () => {
     return () => clearTimeout(timer);
   }, [input]);
 
-  // ✅ Handle click → Redux + Navigate
+
   const handleClick = (item) => {
-    dispatch(setDetail(item));           // 📦 Store data in Redux
-    navigate(`/details/${item.id}`);     // 📄 Go to detail page
-    setInput("");                        // 🧹 Clear input
+    dispatch(setDetail(item));           
+    navigate(`/details/${item.id}`);    
+    setInput("");                    
   };
 
   return (
     <div className="w-full flex justify-center pt-2.5 px-3 md:px-5">
       <div className="relative flex items-center gap-2 md:gap-4 w-full max-w-[800px] ml-12 md:ml-0">
 
-        {/* 🔍 Search Box */}
+       
         <div className="relative flex-1 min-w-0">
           <div className="flex items-center bg-[#1f1f1f] rounded-full px-3 md:px-4 py-2 md:py-3 shadow-lg border border-gray-700 focus-within:border-red-500 transition-all duration-300">
 
@@ -106,11 +97,11 @@ const TopNav = () => {
             </div>
           </div>
 
-          {/* 🔽 Search Results Dropdown */}
+          
           {input && (
             <div className="absolute top-12 md:top-14 left-0 w-full max-h-[350px] bg-[#1f1f1f] border border-gray-700 rounded-2xl shadow-2xl overflow-y-auto z-[999] mt-1">
 
-              {/* ⏳ Loading Skeleton */}
+              
               {loading ? (
                 <div className="p-4 flex flex-col gap-3">
                   {[1, 2, 3].map((n) => (
@@ -121,7 +112,7 @@ const TopNav = () => {
                 data.map((item) => (
                   <div
                     key={item.id}
-                    onClick={() => handleClick(item)}   // ✅ CLICK EVENT
+                    onClick={() => handleClick(item)}  
                     className="flex items-center gap-3 px-4 py-3 hover:bg-gray-800/50 cursor-pointer border-b border-gray-800/50 last:border-0"
                   >
                     <img
@@ -149,7 +140,7 @@ const TopNav = () => {
           )}
         </div>
 
-        {/* 🔥 Login Button */}
+        
         <button
           onClick={() => setOpenAuth(true)}
           className="bg-[#E50914] hover:bg-[#b20710] text-white font-bold transition-all shadow-lg active:scale-90
@@ -159,7 +150,7 @@ const TopNav = () => {
           <FaRegUserCircle className="block md:hidden text-xl" />
         </button>
 
-        {/* 🔐 Auth Modal */}
+       
         <AuthModal isOpen={openAuth} onClose={() => setOpenAuth(false)} />
       </div>
     </div>

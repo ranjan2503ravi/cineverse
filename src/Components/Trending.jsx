@@ -40,7 +40,7 @@ const Trending = () => {
   return (
     <div className='bg-[#0F0F12] min-h-screen text-white pb-10'>
       
-      {/* 🌌 Header */}
+      
       <div className='sticky top-0 z-[100] backdrop-blur-xl bg-[#0F0F12]/80 border-b border-white/5 px-5 py-4 flex items-center justify-between'>
         <div className='flex items-center gap-6'>
           <motion.button 
@@ -61,7 +61,7 @@ const Trending = () => {
         </div>
       </div>
 
-      {/* 🎬 Grid */}
+      
       <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 p-5 md:p-10'>
         <AnimatePresence>
           {data.map((item, index) => (

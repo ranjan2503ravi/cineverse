@@ -36,7 +36,7 @@ const TvDetails = () => {
     return (
         <div className='min-h-screen bg-[#0F0F12] text-white overflow-x-hidden'>
             
-            {/* 🎬 Dynamic Header Section */}
+            
             <div className='relative w-full h-[70vh] md:h-[90vh]'>
                 <div className='absolute inset-0'>
                     <img 
@@ -85,7 +85,7 @@ const TvDetails = () => {
                 </div>
             </div>
 
-            {/* 📺 Seasons Section */}
+            
             <div className='p-6 md:p-20 container mx-auto'>
                 <h2 className='text-2xl font-black mb-10 tracking-tighter border-l-4 border-[#8b7ff0] pl-4 uppercase'>Seasons</h2>
                 <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6'>
@@ -107,7 +107,7 @@ const TvDetails = () => {
                 </div>
             </div>
 
-            {/* 🎥 Trailer Section */}
+           
             <div className='p-6 md:p-20 bg-zinc-950/50'>
                 <div className='max-w-6xl mx-auto'>
                     <h2 className='text-2xl font-black mb-10 tracking-tighter uppercase'>Official Preview</h2>

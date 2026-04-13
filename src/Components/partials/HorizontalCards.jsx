@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import instance from '../../Utils/axios';
 import { motion, AnimatePresence } from 'framer-motion';
 import Dropdown from './Dropdown';
-import { useNavigate } from 'react-router-dom'; // 🔥 Import useNavigate
+import { useNavigate } from 'react-router-dom'; 
 
 const HorizontalCards = () => {
-  const navigate = useNavigate(); // 🔥 Initialize
+  const navigate = useNavigate(); 
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [category, setCategory] = useState("all");
@@ -56,7 +56,7 @@ const HorizontalCards = () => {
               transition={{ delay: index * 0.03 }}
               whileHover={{ y: -10 }}
               whileTap={{ scale: 0.95 }}
-              // 🔥 Dynamic Navigation: category pass kar rahe hain query param mein
+              
               onClick={() => navigate(`/horizontal/details/${item.id}?type=${item.media_type || category}`)}
               className='min-w-[150px] md:min-w-[200px] h-[230px] md:h-[300px] bg-zinc-900 rounded-2xl overflow-hidden relative shadow-[0_10px_30px_rgba(0,0,0,0.5)] group cursor-pointer border border-white/5'
             >

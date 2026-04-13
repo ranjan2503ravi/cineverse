@@ -46,7 +46,7 @@ const DetailPage = () => {
   return (
     <div className="min-h-screen bg-[#0F0F0F] text-white font-sans selection:bg-purple-600">
       
-      {/* 🔙 Back Button */}
+    
       <button
         onClick={() => navigate(-1)}
         className="fixed top-6 left-6 z-50 flex items-center gap-2 bg-black/50 backdrop-blur-xl px-5 py-2.5 rounded-full border border-white/10 hover:bg-white hover:text-black transition-all duration-300 shadow-2xl"
@@ -55,7 +55,7 @@ const DetailPage = () => {
         <span className="font-bold">Back</span>
       </button>
 
-      {/* 🎬 Hero Section */}
+      
       <div className="relative h-[65vh] md:h-[80vh] w-full">
         <div 
           className="absolute inset-0 bg-cover bg-center"
@@ -91,7 +91,7 @@ const DetailPage = () => {
         </div>
       </div>
 
-      {/* 📄 Info Section */}
+     
       <div className="px-6 md:px-16 py-12 max-w-7xl mx-auto flex flex-col md:flex-row gap-12 -mt-10 relative z-10">
         <div className="w-[200px] md:w-[320px] flex-shrink-0 mx-auto md:mx-0">
           <img
@@ -108,19 +108,19 @@ const DetailPage = () => {
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8 border-t border-zinc-800 pt-8">
-              {/* Manual Box 1 */}
+              
               <div>
                 <p className="text-zinc-500 text-xs font-bold uppercase mb-1 tracking-widest">Status</p>
                 <p className="text-white text-lg font-semibold">{data?.status || "N/A"}</p>
               </div>
 
-              {/* Manual Box 2 */}
+              
               <div>
                 <p className="text-zinc-500 text-xs font-bold uppercase mb-1 tracking-widest">Budget</p>
                 <p className="text-white text-lg font-semibold">{data?.budget ? `$${(data.budget/1000000).toFixed(1)}M` : "N/A"}</p>
               </div>
 
-              {/* Manual Box 3 */}
+              
               <div>
                 <p className="text-zinc-500 text-xs font-bold uppercase mb-1 tracking-widest">Language</p>
                 <p className="text-white text-lg font-semibold">{data?.original_language?.toUpperCase() || "N/A"}</p>
@@ -129,7 +129,7 @@ const DetailPage = () => {
         </div>
       </div>
 
-      {/* 🎥 Video Modal */}
+      
       {showTrailer && videoKey && (
         <div className="fixed inset-0 bg-black/95 backdrop-blur-sm flex items-center justify-center z-[100] px-4">
           <button

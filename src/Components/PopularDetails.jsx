@@ -14,7 +14,6 @@ const PopularDetails = () => {
         try {
             setLoading(true)
             let res;
-            // Popular category movie bhi ho sakti hai aur tv bhi
             try {
                 res = await instance.get(`/movie/${id}?append_to_response=videos`)
             } catch (err) {
@@ -42,7 +41,7 @@ const PopularDetails = () => {
     return (
         <div className='min-h-screen bg-[#0F0F12] text-white overflow-x-hidden'>
             
-            {/* 🎬 Hero Banner */}
+            
             <div className='relative w-full h-[60vh] md:h-[80vh]'>
                 <div className='absolute inset-0'>
                     <img 
@@ -82,7 +81,7 @@ const PopularDetails = () => {
                 </div>
             </div>
 
-            {/* 📺 Premium Player Section */}
+            
             <div className='p-5 md:p-20 max-w-7xl mx-auto'>
                 <h2 className='text-3xl font-black mb-10 tracking-tighter italic'>OFFICIAL PREVIEW</h2>
                 <div className='relative w-full aspect-video rounded-[40px] overflow-hidden border border-white/10 shadow-2xl bg-zinc-900'>

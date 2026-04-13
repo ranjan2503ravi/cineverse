@@ -5,7 +5,7 @@ import { FaArrowLeftLong, FaInstagram, FaImdb, FaXTwitter } from "react-icons/fa
 import { motion } from 'framer-motion'
 
 const PersonDetails = () => {
-    // 🔥 Direct id uthao (split karne ki zaroorat nahi agar navigate sahi hai)
+   
     const { id } = useParams()
     const navigate = useNavigate()
     const [showFullBio, setShowFullBio] = useState(false)
@@ -50,7 +50,7 @@ const PersonDetails = () => {
     return (
         <div className="bg-[#0F0F12] text-white min-h-screen">
             
-            {/* 🌌 Background Backdrop */}
+        
             <div className="fixed inset-0 pointer-events-none opacity-20">
                 <img 
                     src={person.profile_path ? `https://image.tmdb.org/t/p/original${person.profile_path}` : ""} 
@@ -59,7 +59,7 @@ const PersonDetails = () => {
                 />
             </div>
 
-            {/* 🔙 Navigation */}
+           
             <nav className="fixed top-0 w-full flex justify-between items-center px-6 md:px-12 py-6 z-[100] backdrop-blur-md bg-black/20 border-b border-white/5">
                 <button onClick={() => navigate(-1)} className="flex items-center gap-2 text-xs font-black uppercase tracking-[3px] hover:text-emerald-400 transition-colors">
                     <FaArrowLeftLong /> Back
@@ -74,7 +74,7 @@ const PersonDetails = () => {
             <div className="relative z-10 container mx-auto px-6 md:px-12 pt-32 pb-20">
                 <div className="flex flex-col lg:flex-row gap-16">
                     
-                    {/* 👤 Left Side */}
+                    
                     <div className="lg:w-1/3">
                         <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }}>
                             <div className="rounded-3xl overflow-hidden shadow-2xl border border-white/10">
@@ -101,7 +101,7 @@ const PersonDetails = () => {
                         </motion.div>
                     </div>
 
-                    {/* 📝 Right Side */}
+                    
                     <div className="lg:w-2/3">
                         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
                             <h1 className="text-6xl md:text-8xl font-black mb-4 tracking-tighter leading-none">{person.name}</h1>
@@ -121,7 +121,7 @@ const PersonDetails = () => {
                                 </p>
                             </div>
 
-                            {/* 🎬 Work Section */}
+                            
                             <h3 className="text-emerald-400 font-black text-xs uppercase tracking-widest mb-6">Top Works</h3>
                             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
                                 {credits.map((item, idx) => (

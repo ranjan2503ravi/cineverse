@@ -6,10 +6,9 @@ import { IoPlaySharp, IoShieldCheckmarkSharp, IoFlashSharp } from "react-icons/i
 
 const About = () => {
   return (
-    // h-screen aur overflow-hidden ko hata kar min-h-screen aur overflow-y-auto kiya
+    
     <div className="bg-[#050505] text-white min-h-screen overflow-y-auto flex flex-col font-sans selection:bg-red-600/30">
       
-      {/* --- NAVIGATION --- */}
       <nav className="fixed top-0 left-0 w-full z-[100] p-6 md:p-8 flex justify-between items-center bg-gradient-to-b from-black/80 to-transparent backdrop-blur-sm md:backdrop-blur-none">
         <Link to="/" className="flex items-center gap-2 group">
           <div className="p-2 rounded-full bg-white/5 border border-white/10 group-hover:bg-red-600 transition-all duration-300">
@@ -20,17 +19,15 @@ const About = () => {
         <div className="text-red-600 font-black italic tracking-tighter text-xl">C<span className="text-white">V.</span></div>
       </nav>
 
-      {/* --- MAIN CONTENT --- */}
       <main className="flex-1 flex flex-col md:flex-row pt-24 md:pt-0">
         
-        {/* LEFT SIDE: Visual Hook */}
         <motion.div 
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           className="w-full md:w-[45%] p-8 md:p-16 lg:p-24 flex flex-col justify-center relative min-h-[60vh] md:min-h-screen"
         >
-          {/* Background Background Text */}
+         
           <div className="absolute -left-10 md:-left-20 top-1/2 -translate-y-1/2 text-[150px] md:text-[300px] font-black text-white/[0.02] select-none pointer-events-none hidden sm:block">
             CINE
           </div>
@@ -60,11 +57,11 @@ const About = () => {
           </div>
         </motion.div>
 
-        {/* RIGHT SIDE: Interactive Cards */}
+        
         <div className="w-full md:w-[55%] bg-[#080808] p-8 md:p-16 lg:p-24 flex items-center min-h-[50vh] md:min-h-screen">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
             
-            {/* Mission Card */}
+            
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -78,11 +75,11 @@ const About = () => {
               </p>
             </motion.div>
 
-            {/* Feature 1 */}
+          
             <StatCard icon={<IoPlaySharp size={20}/>} title="4K HDR" desc="Adaptive streaming tech for pixel-perfect clarity." delay={0.2} />
-            {/* Feature 2 */}
+            
             <StatCard icon={<IoFlashSharp size={20}/>} title="FAST" desc="Optimized SSR and pre-fetching for under 2s load time." delay={0.3} />
-            {/* Feature 3 */}
+            
             <StatCard icon={<IoShieldCheckmarkSharp size={20}/>} title="SECURE" desc="End-to-end encryption for your personal watchlists." delay={0.4} />
             
             <motion.div 
@@ -99,7 +96,7 @@ const About = () => {
         </div>
       </main>
 
-      {/* --- FOOTER (MINIMAL) --- */}
+      
       <footer className="p-8 flex flex-col md:flex-row justify-between items-center gap-4 border-t border-white/5 bg-[#050505]">
         <p className="text-[10px] uppercase tracking-widest text-gray-600 text-center">© 2026 Cineverse Labs • Crafting Cinematic Experiences</p>
         <div className="flex gap-8 text-[10px] uppercase tracking-widest font-bold">

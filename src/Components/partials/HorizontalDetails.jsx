@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import instance from '../../Utils/axios';
-import { FaArrowLeftLong, FaPlay, FaStar, FaYoutube } from "react-icons/fa6"; // FaYoutube add kiya
+import { FaArrowLeftLong, FaPlay, FaStar, FaYoutube } from "react-icons/fa6"; 
 
 const HorizontalDetails = () => {
     const { id } = useParams();
@@ -17,7 +17,7 @@ const HorizontalDetails = () => {
     const getDetails = async () => {
         try {
             setLoading(true);
-            // 🔥 Yahan hum videos mangwa rahe hain
+            
             const { data } = await instance.get(`/${type}/${id}?append_to_response=videos`);
             setInfo(data);
             setLoading(false);
@@ -38,12 +38,12 @@ const HorizontalDetails = () => {
         </div>
     );
 
-    // 🎥 Trailer nikalne ka logic
+    
     const trailer = info.videos?.results.find(v => v.type === "Trailer") || info.videos?.results[0];
 
     return (
         <div className='min-h-screen bg-[#1F1E24] text-white pb-20'>
-            {/* 🎬 Backdrop Section */}
+           
             <div className='relative w-full h-[60vh]'>
                 <img 
                     className='w-full h-full object-cover opacity-40'
@@ -60,7 +60,7 @@ const HorizontalDetails = () => {
                 </button>
             </div>
 
-            {/* 📝 Info Section */}
+           
             <div className='px-5 md:px-20 -mt-32 relative z-10 flex flex-col md:row gap-10'>
                 <img 
                     className='w-64 hidden md:block rounded-2xl shadow-2xl border border-white/10'
@@ -89,7 +89,7 @@ const HorizontalDetails = () => {
                         {info.overview}
                     </p>
 
-                    {/* 🔥 Agar trailer hai toh niche section dikhao */}
+                    
                     {trailer ? (
                          <a 
                             href={`#trailer-section`}
@@ -103,7 +103,7 @@ const HorizontalDetails = () => {
                 </div>
             </div>
 
-            {/* 📺 Trailer Section (Iframe) */}
+            
             {trailer && (
                 <div id="trailer-section" className='mt-20 px-5 md:px-20'>
                     <h2 className='text-2xl font-black mb-10 tracking-tighter flex items-center gap-3'>

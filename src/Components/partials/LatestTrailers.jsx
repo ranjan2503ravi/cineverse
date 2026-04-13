@@ -24,7 +24,7 @@ const LatestTrailers = () => {
             setLoading(true);
             const activeFilter = filters.find(f => f.id === category);
             const res = await instance.get(activeFilter.api);
-            setData(res.data.results.slice(0, 15)); // Thoda zyada data for better scroll
+            setData(res.data.results.slice(0, 15)); 
             setLoading(false);
         } catch (error) {
             console.error("Error fetching trailers:", error);
@@ -53,13 +53,12 @@ const LatestTrailers = () => {
     return (
         <div className="relative w-full py-16 bg-[#1F1E24] select-none overflow-hidden">
 
-            {/* Cinematic Background Glows */}
             <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[60%] bg-red-900/10 blur-[120px] rounded-full pointer-events-none" />
             <div className="absolute bottom-[-10%] right-[-10%] w-[30%] h-[50%] bg-indigo-900/10 blur-[100px] rounded-full pointer-events-none" />
 
             <div className="relative z-10 px-6 md:px-16">
 
-                {/* Header Section */}
+                
                 <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-10">
 
                     <div className="space-y-1">
@@ -71,7 +70,7 @@ const LatestTrailers = () => {
                         </h1>
                     </div>
 
-                    {/* Navigation Filters */}
+                   
                     <div className="flex p-1 bg-zinc-900/80 backdrop-blur-xl rounded-2xl border border-white/5 shadow-inner">
                         {filters.map((f) => (
                             <button
@@ -88,7 +87,7 @@ const LatestTrailers = () => {
                     </div>
                 </div>
 
-                {/* Horizontal Scroll Row */}
+                
                 <div
                     ref={scrollRef}
                     className="flex gap-6 overflow-x-auto pb-10 pt-4 scrollbar-hide snap-x snap-mandatory"
@@ -109,7 +108,7 @@ const LatestTrailers = () => {
                                 whileHover={{ scale: 1.02, y: -5 }}
                                 className="min-w-[320px] md:min-w-[440px] aspect-video bg-zinc-900 rounded-3xl overflow-hidden relative cursor-pointer shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/5 group snap-center"
                             >
-                                {/* Static Backdrop Image */}
+                                
                                 <img
                                     className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 ${hoveredId === item.id ? 'opacity-0 scale-110' : 'opacity-60'
                                         }`}
@@ -118,7 +117,7 @@ const LatestTrailers = () => {
                                     loading="lazy"
                                 />
 
-                                {/* Video Engine Overlay */}
+                                
                                 <AnimatePresence>
                                     {hoveredId === item.id && videoKeys[item.id] && (
                                         <motion.div
@@ -134,7 +133,7 @@ const LatestTrailers = () => {
                                                 title={item.title}
                                             />
 
-                                            {/* Top Overlay Controls */}
+                                           
                                             <div className="absolute top-4 left-6 right-6 flex justify-between items-center z-20">
                                                 <div className="flex gap-2">
                                                     <span className="px-2 py-0.5 bg-red-600 text-[10px] font-black rounded text-white">4K HDR</span>
@@ -150,7 +149,7 @@ const LatestTrailers = () => {
                                                 </button>
                                             </div>
 
-                                            {/* Dynamic Progress Bar */}
+                                            
                                             <div className="absolute bottom-0 left-0 w-full h-1.5 bg-white/10 z-20">
                                                 <motion.div
                                                     initial={{ width: 0 }}
@@ -163,7 +162,7 @@ const LatestTrailers = () => {
                                     )}
                                 </AnimatePresence>
 
-                                {/* Play Button Hint (Center) */}
+                                
                                 <div className={`absolute inset-0 flex items-center justify-center pointer-events-none z-10 transition-all duration-500 ${hoveredId === item.id ? 'opacity-0' : 'opacity-100'}`}>
                                     <div className="w-20 h-20 bg-white/5 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center group-hover:scale-125 transition-transform duration-700">
                                         <div className="w-14 h-14 bg-white text-black rounded-full flex items-center justify-center shadow-2xl">
@@ -172,7 +171,7 @@ const LatestTrailers = () => {
                                     </div>
                                 </div>
 
-                                {/* Title & Info (Bottom) */}
+                                
                                 <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black via-black/90 to-transparent z-10">
                                     <motion.h3
                                         className="text-white font-black text-xl md:text-2xl drop-shadow-2xl line-clamp-1"
@@ -193,7 +192,7 @@ const LatestTrailers = () => {
                     )}
                 </div>
 
-                {/* Footer Hint */}
+                
                 <div className="flex items-center gap-4 text-zinc-600 mt-4">
                     <div className="h-[1px] flex-grow bg-zinc-900"></div>
                     <p className="text-[10px] font-bold uppercase tracking-widest">Scroll to explore more</p>

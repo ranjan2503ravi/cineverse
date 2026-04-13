@@ -8,45 +8,44 @@
 
 @layer utilities {
   .scrollbar-hide {
-    /* Chrome, Safari, and Opera */
+    
     &::-webkit-scrollbar {
       display: none;
     }
-    /* IE, Edge and Firefox */
+    
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
 }
 
-/* Aapne jo colors comment kiye hain, unhe variable bana lo 
-   taaki pure app mein use kar sako */
+
 :root {
   --pri-bg: #1F1E24;
   --accent: #6556CD;
 }
 
 
-/* Scrollbar width */
+
 ::-webkit-scrollbar {
   width: 8px;
 }
 
-/* Track (background) */
+
 ::-webkit-scrollbar-track {
   background: #1f1f1f;
   border-radius: 10px;
 }
 
-/* Thumb (scroll handle) */
+
 ::-webkit-scrollbar-thumb {
   background: #444;
   border-radius: 10px;
   transition: 0.3s;
 }
 
-/* Hover effect */
+
 ::-webkit-scrollbar-thumb:hover {
-  background: #e50914; /* Netflix red */
+  background: #e50914; 
 }
 
 

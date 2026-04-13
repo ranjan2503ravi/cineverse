@@ -36,7 +36,7 @@ const MoviesDetails = () => {
     return (
         <div className='min-h-screen bg-[#0F0F12] text-white overflow-x-hidden'>
             
-            {/* Hero Section */}
+           
             <div className='relative w-full h-[60vh] md:h-[80vh]'>
                 <div className='absolute inset-0'>
                     <img 
@@ -76,7 +76,7 @@ const MoviesDetails = () => {
                 </div>
             </div>
 
-            {/* Trailer Player */}
+            
             <div className='p-5 md:p-20 max-w-7xl mx-auto'>
                 <h2 className='text-3xl font-black mb-10 tracking-tighter italic'>MOVIE PREVIEW</h2>
                 <div className='relative w-full aspect-video rounded-3xl overflow-hidden border border-white/5 shadow-2xl bg-zinc-900'>

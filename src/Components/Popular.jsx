@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import instance from '../Utils/axios'
 import TopNav from './partials/TopNav'
-import { useNavigate, Link } from 'react-router-dom' // Link import kiya
+import { useNavigate, Link } from 'react-router-dom' 
 import { FaArrowLeftLong } from "react-icons/fa6"
 import { motion, AnimatePresence } from 'framer-motion'
 import Dropdown from './partials/Dropdown'
@@ -76,7 +76,7 @@ const Popular = () => {
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-5 md:p-10'>
                 <AnimatePresence>
                     {data.map((item, index) => (
-                        <Link to={`/popular/details/${item.id}`} key={index}> {/* Perfect Path */}
+                        <Link to={`/popular/details/${item.id}`} key={index}> 
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.95 }}
                                 whileInView={{ opacity: 1, scale: 1 }}

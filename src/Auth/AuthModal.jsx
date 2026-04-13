@@ -12,7 +12,7 @@ const AuthModal = ({ isOpen, onClose }) => {
 
       <div className="bg-[#1f1f1f] p-6 rounded-xl w-[350px] relative shadow-2xl">
 
-        {/* Close */}
+        
         <button
           onClick={onClose}
           className="absolute top-3 right-3 text-white text-xl"
@@ -20,7 +20,7 @@ const AuthModal = ({ isOpen, onClose }) => {
           ✕
         </button>
 
-        {/* Toggle */}
+        
         {isLogin ? (
           <Login switchMode={() => setIsLogin(false)} />
         ) : (

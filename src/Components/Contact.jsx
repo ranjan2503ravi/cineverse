@@ -1,17 +1,16 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-// React Icons
 import { MdEmail, MdPhone, MdLocationOn } from "react-icons/md";
 import { IoSendSharp } from "react-icons/io5";
 import { BiArrowBack } from "react-icons/bi";
 
 const Contact = () => {
   return (
-    // min-h-screen aur overflow-y-auto add kiya taaki layout na tute
+    
     <div className="bg-[#050505] text-white min-h-screen overflow-y-auto flex flex-col font-sans selection:bg-red-600 custom-scrollbar">
       
-      {/* --- MINIMAL BACK NAV --- */}
+     
       <nav className="fixed top-0 left-0 w-full z-[100] p-6 md:p-8 bg-gradient-to-b from-black/80 to-transparent backdrop-blur-sm md:backdrop-blur-none">
         <Link to="/" className="inline-flex items-center gap-2 group transition-all duration-300">
           <div className="p-2 rounded-full bg-white/5 border border-white/10 group-hover:bg-red-600 group-hover:border-red-600 transition-all">
@@ -21,10 +20,10 @@ const Contact = () => {
         </Link>
       </nav>
 
-      {/* --- MAIN CONTACT SECTION --- */}
+      
       <main className="flex-1 flex flex-col md:flex-row pt-24 md:pt-0">
         
-        {/* LEFT SIDE: Typography & Details */}
+        
         <motion.div 
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -54,9 +53,9 @@ const Contact = () => {
           </div>
         </motion.div>
 
-        {/* RIGHT SIDE: Premium Glass Form */}
+        
         <div className="w-full md:w-[55%] p-8 md:p-16 lg:p-24 flex items-center justify-center relative overflow-hidden min-h-[70vh] md:min-h-screen">
-          {/* Subtle Background Glow */}
+         
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-red-600/10 blur-[100px] rounded-full pointer-events-none" />
 
           <motion.form 
@@ -96,7 +95,7 @@ const Contact = () => {
         </div>
       </main>
 
-      {/* --- MINIMAL FOOTER --- */}
+      
       <footer className="p-8 md:px-16 flex flex-col md:row justify-between items-center border-t border-white/5 text-[9px] uppercase tracking-[0.3em] text-gray-600 gap-4 bg-[#050505]">
         <p>© 2026 Cineverse Labs</p>
         <p className="hidden md:block">Performance Oriented Cinematic Interface</p>
@@ -109,7 +108,7 @@ const Contact = () => {
   );
 };
 
-// Helper Components (Same as before but with better padding/sizing)
+
 const ContactInfo = ({ icon, text, label }) => (
   <div className="flex items-center gap-6 group cursor-pointer">
     <div className="p-4 rounded-2xl bg-white/5 border border-white/10 text-red-600 group-hover:bg-red-600 group-hover:text-white transition-all duration-500 shadow-xl">
