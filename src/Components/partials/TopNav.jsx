@@ -48,15 +48,23 @@ const TopNav = () => {
     }
   };
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (input.trim() !== "") getSearch();
-      else setData([]);
-    }, 500);
+ useEffect(() => {
+  const controller = new AbortController();
 
-    return () => clearTimeout(timer);
-  }, [input]);
+  const timer = setTimeout(() => {
+    if (input.trim().length >= 3) {
+      setLoading(true);
+      getSearch(controller.signal);
+    } else {
+      setData([]);
+    }
+  }, 700);
 
+  return () => {
+    clearTimeout(timer);
+    controller.abort(); 
+  };
+}, [input]);
 
   const handleClick = (item) => {
     dispatch(setDetail(item));           
