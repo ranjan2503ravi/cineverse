@@ -1,6 +1,6 @@
 export const startTracking = () => {
 
-  // CLICK TRACKING
+  
   document.addEventListener("click", (e) => {
     window.parent.postMessage({
       type: "click",
@@ -12,16 +12,22 @@ export const startTracking = () => {
     }, "*");
   });
 
-  // INPUT TRACKING
+  
+  let timer;
+
   document.addEventListener("input", (e) => {
-    window.parent.postMessage({
-      type: "input",
-      details: {
-        tag: e.target.tagName,
-        value: e.target.value?.slice(0, 30) || ""
-      },
-      time: new Date().toLocaleTimeString()
-    }, "*");
+    clearTimeout(timer);
+
+    timer = setTimeout(() => {
+      window.parent.postMessage({
+        type: "input",
+        details: {
+          tag: e.target.tagName,
+          value: e.target.value || ""
+        },
+        time: new Date().toLocaleTimeString()
+      }, "*");
+    }, 500);
   });
 
 };
