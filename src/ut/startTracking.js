@@ -1,7 +1,7 @@
-export const startTracking = () => {
-  let step = 0;
 
-  
+let step = 0;
+
+export const startTracking = () => {
   const sendMessage = (type, details) => {
     step++;
     window.parent.postMessage({
@@ -13,37 +13,41 @@ export const startTracking = () => {
   };
 
   
-  document.addEventListener("click", (e) => {
+  const handleClick = (e) => {
     sendMessage("click", {
       tag: e.target.tagName,
       text: e.target.innerText?.slice(0, 30).trim() || ""
     });
-  });
+  };
 
-  
-  let inputTimer; 
-
-  document.addEventListener("input", (e) => {
-    clearTimeout(inputTimer); 
-
+  let inputTimer;
+  const handleInput = (e) => {
+    clearTimeout(inputTimer);
     inputTimer = setTimeout(() => {
       sendMessage("input", {
         tag: e.target.tagName,
         value: e.target.value || ""
       });
-    }, 500); 
-  });
+    }, 500);
+  };
+
+  let scrollTimer;
+  const handleScroll = () => {
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(() => {
+      sendMessage("scroll", { y: window.scrollY });
+    }, 300);
+  };
 
   
-  let scrollTimer;
+  document.addEventListener("click", handleClick);
+  document.addEventListener("input", handleInput);
+  document.addEventListener("scroll", handleScroll);
 
-  document.addEventListener("scroll", () => {
-    clearTimeout(scrollTimer);
-
-    scrollTimer = setTimeout(() => {
-      sendMessage("scroll", {
-        y: window.scrollY
-      });
-    }, 300);
-  });
+  
+  return () => {
+    document.removeEventListener("click", handleClick);
+    document.removeEventListener("input", handleInput);
+    document.removeEventListener("scroll", handleScroll);
+  };
 };
